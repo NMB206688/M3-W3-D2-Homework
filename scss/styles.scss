@@ -1,0 +1,67 @@
+@import 'colors';
+
+// Define the mixin first
+@mixin button-style {
+    background-color: $highlight;
+    color: $white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 7em;
+    height: 2.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5em 2em;
+
+    // Center content vertically
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+// Global styles
+* {
+    color: $green-dark;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.container {
+    background-color: $yellow;
+    border: 1px solid #000;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+
+    .left, .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+
+    .left {
+        background-color: $green-dark;
+        height: 100%;
+        width: 69%;
+    }
+
+    .right {
+        background-color: $green-light;
+        height: 100%;
+        width: 29%;
+
+        p {
+            margin: 0;
+        }
+
+        .button {
+            @include button-style;
+        }
+    }
+}
